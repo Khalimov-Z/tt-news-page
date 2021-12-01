@@ -41,8 +41,6 @@ export const reducer = (state = initialState, action) => {
     case SET_NEWS_DATA:
       localStorage.setItem("newsData", JSON.stringify(action.payload));
       return { ...state, newsData: action.payload };
-    case DELETE_NEWS_DATA:
-      return { ...state, newsData: action.payload };
     default:
       return { ...state };
   }
@@ -51,7 +49,6 @@ export const reducer = (state = initialState, action) => {
 const USER_LOGIN = "USER_LOGIN";
 const USER_LOGOUT = "USER_LOGOUT";
 const SET_NEWS_DATA = "SET_NEWS_DATA";
-const DELETE_NEWS_DATA = "DELETE_NEWS_DATA";
 
 export const userLogIn = () => {
   return {
@@ -68,13 +65,6 @@ export const userLogOut = () => {
 export const setNewsData = (data) => {
   return {
     type: SET_NEWS_DATA,
-    payload: data,
-  };
-};
-
-export const deleteNewsData = (data) => {
-  return {
-    type: DELETE_NEWS_DATA,
     payload: data,
   };
 };

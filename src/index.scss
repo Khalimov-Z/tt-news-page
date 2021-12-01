@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+$box-shadow-white: 0 0 0 1px #0000001a, 0 4px 11px #0000001a;
+$color-title: lightslategray;
+$background-color-btn: rgb(45, 52, 72);
+$news-title-size: 18px;
+
+.App {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+main {
+  width: 900px;
+  margin: 0 auto;
+}
+
+input,
+button,
+textarea {
+  outline: unset;
+  border: unset;
+  border: 1px solid #ccc;
+}
+.header {
+  box-shadow: $box-shadow-white;
+  padding: 10px 0;
+  &__nav {
+    padding: 5px;
+    display: inline-block;
+    margin: 0;
+    a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: rgb(45, 52, 72);
+      font-weight: 620;
+      font-size: 18px;
+      transition: all 0.2s linear;
+      border-bottom: 2px solid transparent;
+      img {
+        vertical-align: middle;
+        width: 250px;
+        position: relative;
+        top: -2px;
+      }
+    }
+  }
+  &__button {
+    color: white;
+    background-color: $background-color-btn;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 4px 25px;
+    transition: all 0.2s linear;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+.news-item {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  box-shadow: 2px 2px 5px #ccc;
+  word-wrap: break-word;
+  p {
+    font-size: 14px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  span {
+    font-weight: 900;
+    font-style: italic;
+  }
+  button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: $background-color-btn;
+    color: white;
+  }
+}
+.not-approved {
+  h2 {
+    color: red;
+  }
+}
+.news-page {
+  color: black;
+  input {
+    border-radius: 5px;
+    width: 300px;
+    padding: 5px;
+  }
+  &__add-news {
+    padding: 5px 10px;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+.popUp {
+  &__body {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 20px;
+  }
+  input,
+  button,
+  textarea {
+    padding: 5px;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+  }
+  button {
+    background-color: $background-color-btn;
+    font-weight: 900;
+    border-radius: 5px;
+    color: white;
+  }
+  &__close-btn {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(1, 1, 1, 0.4);
+    z-index: 1;
+  }
+  &__error-message {
+    font-size: 14px;
+    color: red;
+  }
+}
